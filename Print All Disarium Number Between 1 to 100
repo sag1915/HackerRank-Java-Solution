@@ -1,0 +1,39 @@
+import java.util.*;
+import java.lang.Math.*;
+public class MyClass {
+    public static int lenDigit(int n)
+    { 
+        int length=String.valueOf(n).length();
+        int temp=n;
+        int sum=0;
+        int rem=0;
+        int po=0;
+        
+        while(temp!=0)
+        {
+            rem=temp%10;
+            po=(int)Math.pow(rem,length);
+            length--;
+            sum=sum+po;
+            temp=temp/10;
+        }
+    
+         return sum;        
+        
+    }
+   
+    public static void main(String args[]) 
+    {
+     
+       for(int i=1;i<=200;i++)
+       { 
+            int num=lenDigit(i);
+            if(num==i)
+         System.out.print(i+ " ");
+            
+           
+       }
+    
+        
+    }
+}
