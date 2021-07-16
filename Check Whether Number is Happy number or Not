@@ -1,0 +1,42 @@
+import java.util.*;
+import java.lang.Math.*;
+public class MyClass {
+    public static int lenDigit(int n)
+    { 
+    
+        int temp=n;
+        int length=String.valueOf(n).length();
+    int rem=0;
+    int sum=0;
+    int po=0;
+        while(n!=0)
+        {
+            rem=n%10;
+            po=(int)Math.pow(rem,length);
+            sum=sum+po;
+            n=n/10;
+            
+             
+        }
+        
+    
+          return sum ;    
+        
+    }
+   
+    public static void main(String args[]) 
+    {
+      int n=89;
+      int mm=n;
+      while(mm!=1 && mm!=4)
+      {
+        mm =lenDigit(mm);
+      }
+      
+      
+      if(mm==1)
+        System.out.println(n+" is a happy number  ");
+        else 
+        System.out.println(n+ "=  is Not happy ");
+    }
+}
