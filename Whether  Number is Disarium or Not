@@ -1,0 +1,32 @@
+import java.util.*;
+import java.lang.Math.*;
+public class MyClass {
+    public static int lenDigit(int n)
+    { 
+     int temp=n;
+    int length=String.valueOf(n).length();
+    int rem=0;
+    int sum=0;
+    int po=0;
+        while(n!=0)
+        {
+            rem=n%10;
+            po=(int)Math.pow(rem,length);
+            length--;
+            sum=sum+po;
+            n=n/10;     
+       }
+       return sum;
+    }
+   
+    public static void main(String args[]) 
+    {
+      int n=89;
+      int sum =lenDigit(n);
+      
+       if(sum==n)
+        System.out.println(n+" = Number is Disarium ");
+        else 
+        System.out.println(n+ "= Number is Not  Disarium  ");
+    }
+}
